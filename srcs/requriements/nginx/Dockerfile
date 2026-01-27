@@ -16,4 +16,6 @@ RUN mkdir -p /var/www/html && \
     chmod 755 /var/www/html && \
     chown -R nginx:nginx /var/www/html
 
+COPY conf/index.html /var/www/html/index.html
+
 CMD [ "nginx", "-g", "daemon off;" ]
