@@ -8,6 +8,7 @@ all: up
 
 up:
 	@mkdir -p /Users/logrus/data/mysql
+	@mkdir -p /Users/logrus/data/wordpress
 	@docker-compose -f $(PATH_TO_COMPOSE) up --build -d
 
 down:

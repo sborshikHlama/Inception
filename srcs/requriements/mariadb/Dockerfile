@@ -14,6 +14,9 @@ RUN mkdir -p /var/lib/mysql /var/run/mysqld && \
 # Copy custom MariaDB config
 COPY ./conf/50-server.cnf /etc/my.cnf.d/50-server.cnf
 
+# Remove default config that might override our settings (especially skip-networking)
+RUN rm -f /etc/my.cnf.d/mariadb-server.cnf
+
 # Copy initialization script
 COPY ./tools/init-db.sh /usr/local/bin/init-db.sh
 
