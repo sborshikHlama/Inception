@@ -8,6 +8,7 @@ until mysqladmin -h mariadb -u ${MYSQL_USER} -p${MYSQL_PASSWORD} ping >/dev/null
     sleep 3
 done
 
+# Create config for wordpress to connect to mariadb
 if [ ! -f "wp-config.php" ]; then
     echo ">>> Downloading WordPress..."
     wp core download --allow-root
